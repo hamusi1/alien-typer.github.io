@@ -11,6 +11,7 @@ var input = null;
 var mistake = 0;
 var cpm = 0;
 var wpm = 0;
+var acc;
 document.addEventListener("DOMContentLoaded", (event) => {
     wor = document.getElementById("words")
     inpField = document.querySelector(".field");
@@ -47,13 +48,12 @@ async function startgame() {
     run = false
     document.addEventListener("keydown", function () {
         inpField.focus();
-
+       
     })
     wor = document.addEventListener("click", inpField.focus());
     inpu = document.getElementById("tex");
     input.disabled = true
-    cpm = (charind - mistake) / 2
-    document.getElementById("cpm").innerHTML = "CPM: " +cpm
+    
 }
 function test() {
     console.log("work")
@@ -63,6 +63,7 @@ function test() {
 function inittyping() {
     const characters = wor.querySelectorAll("span");
     let typedchar = inpField.value.split("")[charind];
+    console.log(typedchar)
     if (typedchar == null) {
         charind--;
         characters[charind].classList.remove("correct", "incorrect");
@@ -80,11 +81,17 @@ function inittyping() {
             document.getElementById("mistake").innerText = "MISTAKES: " + mistake;
         }
         charind++;
-        cpm = (charind - mistake) / 2
+        cpm = (charind - mistake) * 2;
         document.getElementById("cpm").innerHTML = "CPM: " + cpm
-        wpm = ((charind - mistake) / 5) / 2;
+        wpm = ((charind - mistake) / 5) *2;
         document.getElementById("wpm").innerHTML = "WPM: " + wpm;
-        
+        acc = ((Math.round((charind - mistake) / charind) * 100));
+        if (charind > 0) {
+            var acc = Math.round(((charind - mistake) / charind) * 100);
+            document.getElementById("acc").innerHTML = "ACCURACY: " + acc + "%";
+        } else {
+            document.getElementById("acc").innerHTML = "ACCURACY: 0%";
+        }
     }
 }
 
@@ -103,3 +110,5 @@ function paragraph() {
     }
     return p;
 }
+
+ 
