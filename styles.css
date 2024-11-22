@@ -61,12 +61,13 @@ button:active {
     margin: 0 5px;
     display: inline-block;
     right: 1100px;
+    user-select:none;
 }
 div#game {
     line-height: 35px;
     height: 200px;
     overflow: hidden;
-   
+    user-select: none;
 }
 #header{
     
@@ -91,7 +92,7 @@ input {
     right: 150px;
     background-color: #1B1A55;
     border-block-color: #1B1A55;
-    z-index: -999;
+    z-index: 2;
     top: 150px;
     width:1000px;
     height: 1000px;
