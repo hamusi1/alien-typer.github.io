@@ -1,4 +1,4 @@
-﻿var button = document.getElementById("ng");
+var button = document.getElementById("ng");
 var seconds = parseInt(document.getElementById("info"));
 const words = 'apple beach chair dance eagle forest garden house island kite lemon magic notebook orange picnic quiet rainbow summer travel umbrella village window yellow zebra capture feature rescue glance steady moment silent proper follow single believe certain distance instead gather market wonder expand figure include defend recent hidden middle forward energy service absent nature balance shadow random engine signal border surface motion income supply wisdom curious problem master station arrive mirror pocket shadow create basket ignore silver adjust memory finish repeat jacket winter hidden'.split(separator = ' ')
 const sleep = ms => new Promise(r => setTimeout(r, ms));
@@ -8,6 +8,9 @@ var inpField = null;
 var wor = null;
 let charind = 0;
 var input = null;
+var mistake = 0;
+var cpm = 0;
+var wpm = 0;
 document.addEventListener("DOMContentLoaded", (event) => {
     wor = document.getElementById("words")
     inpField = document.querySelector(".field");
@@ -49,7 +52,8 @@ async function startgame() {
     wor = document.addEventListener("click", inpField.focus());
     inpu = document.getElementById("tex");
     input.disabled = true
-
+    cpm = (charind - mistake) / 2
+    document.getElementById("cpm").innerHTML = "CPM: " +cpm
 }
 function test() {
     console.log("work")
@@ -71,8 +75,16 @@ function inittyping() {
         else {
 
             characters[charind].classList.add("incorrect");
+           
+            mistake++;
+            document.getElementById("mistake").innerText = "MISTAKES: " + mistake;
         }
         charind++;
+        cpm = (charind - mistake) / 2
+        document.getElementById("cpm").innerHTML = "CPM: " + cpm
+        wpm = ((charind - mistake) / 5) / 2;
+        document.getElementById("wpm").innerHTML = "WPM: " + wpm;
+        
     }
 }
 
