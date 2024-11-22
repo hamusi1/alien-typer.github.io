@@ -1,0 +1,111 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+body {
+    font-family: "Roboto Mono", monospace;
+    background-color: #1B1A55;
+    color: #dae2ff;
+}
+h1 img{
+    position:fixed;
+    top: 20px;
+    width: 80px;
+    padding: 10px;
+    left:360px;
+}
+main{
+    width: 600px
+    
+}
+button {
+    background: #7977b8;
+    color: #dae2ff;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #dae2ff;
+    position: fixed;
+    right: 500px;
+    top: 105px;
+}
+#buttons{
+    text-align: right;
+
+    
+}
+button:hover {
+    background: #4b4a78;
+}
+main{
+    margin: 50px auto;
+    width: 1000px;
+}
+h1{
+    text-align: left;
+}
+#info {
+    position: fixed;
+    top: 105px;
+    font-size: x-large;
+    padding: 0 20px 20px 20px;
+}
+button:active {
+    background-color: #4b4a78;
+    box-shadow: 0 1px #666;
+    transform: translateY(4px);
+}
+#words {
+    
+    z-index: 2;
+    font-family: "Roboto Mono", monospace;
+    font-size: large;
+   
+    color: #606577;
+    margin: 0 5px;
+    display: inline-block;
+    right: 1100px;
+}
+div#game {
+    line-height: 35px;
+    height: 200px;
+    overflow: hidden;
+   
+}
+#header{
+    
+    margin: 20px 6px 30px;
+
+
+}
+#start {
+    text-align:center
+ 
+ 
+}
+span.correct {
+    color: #dae2ff;
+}
+span.incorrect{
+    color: red;
+}
+input {
+    position:absolute;
+    opacity:0;
+    right: 150px;
+    background-color: #1B1A55;
+    border-block-color: #1B1A55;
+    z-index: -999;
+    top: 150px;
+    width:1000px;
+    height: 1000px;
+}
+#wpm,#cpm{
+    position:fixed;
+    top: 500px;
+    width:500px;
+}
+#cpm{
+    right:710px;
+}
+#mistake {
+    right: 850px;
+    position:fixed;
+    top:500px
+}
