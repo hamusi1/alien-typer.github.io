@@ -52,22 +52,21 @@ button:active {
     transform: translateY(4px);
 }
 #words {
-    
     z-index: 2;
     font-family: "Roboto Mono", monospace;
     font-size: large;
-   
     color: #606577;
     margin: 0 5px;
     display: inline-block;
     right: 1100px;
-    user-select:none;
+    user-select: none;
+    pointer-events: none;
 }
 div#game {
     line-height: 35px;
     height: 200px;
     overflow: hidden;
-    user-select: none;
+    
 }
 #header{
     
@@ -89,13 +88,13 @@ span.incorrect{
 input {
     position:absolute;
     opacity:0;
-    right: 150px;
+    right: 170px;
     background-color: #1B1A55;
     border-block-color: #1B1A55;
-    z-index: 2;
+    z-index: 1;
     top: 150px;
     width:1000px;
-    height: 1000px;
+    height: 500px;
 }
 #wpm,#cpm{
     position:fixed;
@@ -109,4 +108,9 @@ input {
     right: 850px;
     position:fixed;
     top:500px
+}
+#acc {
+    right: 570px;
+    position: fixed;
+    top: 500px;
 }
