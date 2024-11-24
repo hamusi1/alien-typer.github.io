@@ -114,8 +114,8 @@ input {
     position: fixed;
     top: 500px;
 }
-#active {
-    position: absolute;
+span.active {
+    
     background-color: yellow;
 }
 
