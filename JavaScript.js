@@ -5,7 +5,7 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 const length = words.length;
 var run = false;
 var inpField = null;
-var wor = null;
+var wor = document.getElementById("words");
 let charind = 0;
 var input = null;
 var mistake = 0;
@@ -26,7 +26,26 @@ async function startgame() {
         return
     }
     run = true
+    charind = 0;
+    mistake = 0;
+    cpm = 0;
+    wpm = 0;
+    acc = 0;
+    seconds = 30; 
+
    
+    document.getElementById("info").innerText = "30"; 
+    document.getElementById("mistake").innerText = "MISTAKES: 0";
+    document.getElementById("cpm").innerHTML = "CPM: 0";
+    document.getElementById("wpm").innerHTML = "WPM: 0";
+    document.getElementById("acc").innerHTML = "ACCURACY: 0%";
+    document.getElementById("time over").innerHTML = ""; 
+    document.getElementById("start").innerText = "START"; 
+
+    wor = document.getElementById("words"); 
+    if (wor) wor.innerHTML = ""; 
+    input.value = "";
+    input.disabled = true;
     const pa = paragraph();
 
    
@@ -51,8 +70,8 @@ async function startgame() {
        
     })
     wor = document.addEventListener("click", inpField.focus());
-    inpu = document.getElementById("tex");
-    input.disabled = true
+    input.disabled = true;
+    
     
 }
 function test() {
@@ -81,6 +100,7 @@ function inittyping() {
             document.getElementById("mistake").innerText = "MISTAKES: " + mistake;
         }
         charind++;
+        characters[charind].classList.add("active");
         cpm = (charind - mistake) * 2;
         document.getElementById("cpm").innerHTML = "CPM: " + cpm
         wpm = ((charind - mistake) / 5) *2;
@@ -96,7 +116,7 @@ function inittyping() {
 }
 
 function paragraph() {
-    wor.innerHTML = ''; 
+ 
     var p = '';
     for (var i = 0; i <= 50; i++) {
         const random = Math.floor(Math.random() * length);
@@ -110,5 +130,3 @@ function paragraph() {
     }
     return p;
 }
-
- 
