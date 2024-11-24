@@ -4,22 +4,16 @@ const words = 'apple beach chair dance eagle forest garden house island kite lem
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 const length = words.length;
 var run = false;
-var inpField = null;
+var inpField = document.querySelector(".field");;
 var wor = document.getElementById("words");
 let charind = 0;
-var input = null;
+
 var mistake = 0;
 var cpm = 0;
 var wpm = 0;
 var acc;
-document.addEventListener("DOMContentLoaded", (event) => {
-    wor = document.getElementById("words")
-    inpField = document.querySelector(".field");
-    inpField.addEventListener("input", inittyping);
-    input = document.getElementById("tex");
-    input.disabled = true
-    
-});
+var input = document.getElementById("txtinp");
+inpField.addEventListener("input", inittyping);
 
 async function startgame() {
     if (run == true) {
@@ -54,7 +48,7 @@ async function startgame() {
         await sleep(1000);
         
     }
-    input = document.getElementById("tex");
+    input = document.getElementById("txtinp");
     input.disabled = false;
     document.getElementById("start").innerText = "START!     ";
     for (seconds = 30; seconds >= 0; seconds--) {
@@ -65,18 +59,12 @@ async function startgame() {
     }
     document.getElementById("time over").innerHTML = "Time Over"
     run = false
-    document.addEventListener("keydown", function () {
-        inpField.focus();
-       
-    })
-    wor = document.addEventListener("click", inpField.focus());
+    
     input.disabled = true;
     
     
 }
-function test() {
-    console.log("work")
-}
+
 
 
 function inittyping() {
@@ -105,7 +93,7 @@ function inittyping() {
         document.getElementById("cpm").innerHTML = "CPM: " + cpm
         wpm = ((charind - mistake) / 5) *2;
         document.getElementById("wpm").innerHTML = "WPM: " + wpm;
-        acc = ((Math.round((charind - mistake) / charind) * 100));
+        
         if (charind > 0) {
             var acc = Math.round(((charind - mistake) / charind) * 100);
             document.getElementById("acc").innerHTML = "ACCURACY: " + acc + "%";
