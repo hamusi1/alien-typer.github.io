@@ -81,9 +81,11 @@ div#game {
 }
 span.correct {
     color: #dae2ff;
+    background-color: #19183c !important;
 }
 span.incorrect{
     color: red;
+    background-color: #19183c !important;
 }
 input {
     position:absolute;
