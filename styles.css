@@ -1,56 +1,69 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
 body {
     font-family: "Roboto Mono", monospace;
     background-color: #19183c;
     color: #dae2ff;
 }
-h1 img{
-    position:fixed;
+body {
+    width: 100%;
+}
+
+h1 img {
+
+    position: fixed;
     top: 20px;
     width: 80px;
-    padding: 10px;
-    left:360px;
+    padding: 10px 10px 10px 10px;
+    left: 50px;
 }
-main{
+
+main {
     width: 600px
-    
 }
+
 button {
     background: #7977b8;
     color: #19183c;
     padding: 10px;
     border-radius: 15px;
-    border: 1px solid ;
+    border: 1px solid;
     position: fixed;
     right: 500px;
     top: 105px;
 }
-#buttons{
-    text-align: right;
 
-    
+#buttons {
+    text-align: right;
 }
+
 button:hover {
     background: #4b4a78;
 }
-main{
+
+main {
     margin: 50px auto;
     width: 1000px;
 }
-h1{
+
+h1 {
     text-align: left;
+    padding: 10px 10px 10px 10px;
 }
+
 #info {
     position: fixed;
     top: 105px;
     font-size: x-large;
     padding: 0 20px 20px 20px;
 }
+
 button:active {
     background-color: #4b4a78;
     box-shadow: 0 1px #666;
     transform: translateY(4px);
 }
+
 #words {
     z-index: 2;
     font-family: "Roboto Mono", monospace;
@@ -62,62 +75,90 @@ button:active {
     user-select: none;
     pointer-events: none;
 }
+
 div#game {
     line-height: 35px;
     height: 200px;
     overflow: hidden;
-    
 }
-#header{
-    
+
+#header {
     margin: 20px 6px 30px;
-
-
 }
+
 #start {
-    text-align:center
- 
- 
+    text-align: center
 }
+
 span.correct {
     color: #dae2ff;
-    background-color: #19183c !important;
+    animation:none !important;
 }
-span.incorrect{
+
+span.incorrect {
     color: red;
-    background-color: #19183c !important;
+    animation: none !important;
 }
+
 input {
-    position:absolute;
-    opacity:0;
+    position: absolute;
+    opacity: 0;
     right: 170px;
     background-color: #1B1A55;
     border-block-color: #1B1A55;
     z-index: 1;
     top: 150px;
-    width:1000px;
+    width: 1000px;
     height: 500px;
 }
-#wpm,#cpm{
-    position:fixed;
-    top: 500px;
-    width:500px;
-}
-#cpm{
-    right:710px;
-}
-#mistake {
-    right: 850px;
-    position:fixed;
-    top:500px
-}
-#acc {
-    right: 570px;
+
+#wpm, #cpm {
     position: fixed;
     top: 500px;
-}
-span.active {
-    
-    background-color: yellow;
+    width: 500px;
+    padding: 30px 30px 30px 30px;
 }
 
+#cpm {
+    right: 710px;
+    padding: 30px 30px 30px 30px;
+}
+
+#mistake {
+    right: 830px;
+    position: fixed;
+    top: 500px ;
+    padding: 30px 30px 30px 30px;
+}
+
+#acc {
+    right: 550px;
+    position: fixed;
+    top: 520px;
+    padding: 10px 10px 10px 10px;
+}
+
+span.active {
+    
+    animation: blink 1s infinite;
+}
+@keyframes blink {
+    0%, 100% {
+        background-color: transparent;
+    }
+
+    50% {
+        background-color: black;
+    }
+}
+#easter {
+    background-color: #19183c;
+    color: #19183c;
+    position: fixed;
+    top: 700px;
+    border-color: #19183c;
+    opacity: 50%;
+}
+#easter:hover {
+        color: #606577;
+}
