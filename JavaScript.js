@@ -25,28 +25,28 @@ async function startgame() {
     cpm = 0;
     wpm = 0;
     acc = 0;
-    seconds = 30; 
+    seconds = 30;
 
-   
-    document.getElementById("info").innerText = "30"; 
+
+    document.getElementById("info").innerText = "30";
     document.getElementById("mistake").innerText = "MISTAKES: 0";
     document.getElementById("cpm").innerHTML = "CPM: 0";
     document.getElementById("wpm").innerHTML = "WPM: 0";
     document.getElementById("acc").innerHTML = "ACCURACY: 0%";
-    document.getElementById("time over").innerHTML = ""; 
-    document.getElementById("start").innerText = "START"; 
+    document.getElementById("time over").innerHTML = "";
+    document.getElementById("start").innerText = "START";
 
-    wor = document.getElementById("words"); 
-    if (wor) wor.innerHTML = ""; 
+    wor = document.getElementById("words");
+    if (wor) wor.innerHTML = "";
     input.value = "";
     input.disabled = true;
     const pa = paragraph();
 
-   
+
     for (var se = 3; se >= 1; se--) {
         document.getElementById("start").innerText = se;
         await sleep(1000);
-        
+
     }
     input = document.getElementById("txtinp");
     input.disabled = false;
@@ -59,10 +59,10 @@ async function startgame() {
     }
     document.getElementById("time over").innerHTML = "Time Over"
     run = false
-    
+
     input.disabled = true;
-    
-    
+
+
 }
 
 
@@ -83,7 +83,7 @@ function inittyping() {
         else {
 
             characters[charind].classList.add("incorrect");
-           
+
             mistake++;
             document.getElementById("mistake").innerText = "MISTAKES: " + mistake;
         }
@@ -91,9 +91,9 @@ function inittyping() {
         characters[charind].classList.add("active");
         cpm = (charind - mistake) * 2;
         document.getElementById("cpm").innerHTML = "CPM: " + cpm
-        wpm = ((charind - mistake) / 5) *2;
+        wpm = ((charind - mistake) / 5) * 2;
         document.getElementById("wpm").innerHTML = "WPM: " + wpm;
-        
+
         if (charind > 0) {
             var acc = Math.round(((charind - mistake) / charind) * 100);
             document.getElementById("acc").innerHTML = "ACCURACY: " + acc + "%";
@@ -104,17 +104,23 @@ function inittyping() {
 }
 
 function paragraph() {
- 
+
     var p = '';
     for (var i = 0; i <= 50; i++) {
         const random = Math.floor(Math.random() * length);
         const word = words[random];
-        p += word+' ';
-       
+        p += word + ' ';
+
     }
     p = p.split('');
     for (i = 0; i < p.length; i++) {
         wor.innerHTML += "<span>" + p[i] + "</span>";
     }
     return p;
+}
+function easter() {
+    document.getElementById("wpm").innerText = "WPM: 999999"
+    document.getElementById("mistake").innerText = "MISTAKES: 0"
+    document.getElementById("cpm").innerText = "CPM: 999999"
+    document.getElementById("acc").innerText = "ACCURACY: 10000%"
 }
