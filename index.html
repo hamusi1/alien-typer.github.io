@@ -8,7 +8,7 @@
 </head>
 <body>
     <main>
-        <h1><img src="https://cdn-icons-png.freepik.com/512/8483/8483946.png" />Alien Typer</h1>
+        <h1 id ="alien" ><img src="https://cdn-icons-png.freepik.com/512/8483/8483946.png" />Alien Typer</h1>
 
         <div id="header">
             <span id="info">
@@ -17,12 +17,12 @@
 
             <h2 id="start"></h2>
             <span id="buttons">
-                <button id="ng" onclick="startgame()">New game</button>
+                <button id="ng" onclick="startgame()">New Words</button>
             </span>
             <h2 id="wpm">WPM: </h2><h2 id="cpm">CPM:</h2><h2 id="mistake">MISTAKES:</h2><h2 id="acc">ACCURACY:</h2>
         </div>
         <div id="game">
-            <input type="text" class="field" id="txtinp" />
+            <input type="text" class="field" id="txtinp" oninput="timer()" />
             <div id="words">
 
             </div>
@@ -30,9 +30,10 @@
 
             </div>
         </div>
-        <h1 id="time over"></h1>
+        <h1 id="timeover"></h1>
     </main>
    
     <button id="easter" onclick="easter()">easteregg</button>
 </body>
 </html>
+
