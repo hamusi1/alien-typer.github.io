@@ -16,10 +16,11 @@ var input = document.getElementById("txtinp");
 inpField.addEventListener("input", inittyping);
 
 async function startgame() {
-    if (run == true) {
-        return
-    }
-    run = true
+
+
+
+    run = false
+    input.disabled = false;
     charind = 0;
     mistake = 0;
     cpm = 0;
@@ -33,36 +34,45 @@ async function startgame() {
     document.getElementById("cpm").innerHTML = "CPM: 0";
     document.getElementById("wpm").innerHTML = "WPM: 0";
     document.getElementById("acc").innerHTML = "ACCURACY: 0%";
-    document.getElementById("time over").innerHTML = "";
-    document.getElementById("start").innerText = "START";
+    document.getElementById("timeover").innerHTML = "";
+  
 
     wor = document.getElementById("words");
     if (wor) wor.innerHTML = "";
     input.value = "";
-    input.disabled = true;
+   
     const pa = paragraph();
 
+    
+    
+   
 
-    for (var se = 3; se >= 1; se--) {
-        document.getElementById("start").innerText = se;
-        await sleep(1000);
+
+}
+async function timer() {
+    if (run == true) {
+        return;
+        
+    }
+    else if (run == false) {
+        
+        run = true     
+    for(seconds = 30; seconds >= 0; seconds--) {
+        if (run == false) {
+            document.getElementById("info").innerText = "30"
+            return;
+        } else {
+            document.getElementById("info").innerText = seconds;
+            await sleep(1000);
+        }
 
     }
-    input = document.getElementById("txtinp");
-    input.disabled = false;
-    document.getElementById("start").innerText = "START!     ";
-    for (seconds = 30; seconds >= 0; seconds--) {
 
-        document.getElementById("info").innerText = seconds;
-        await sleep(1000);
-
-    }
-    document.getElementById("time over").innerHTML = "Time Over"
+    document.getElementById("timeover").innerHTML = "Time Over"
     run = false
-
     input.disabled = true;
-
-
+}
+   
 }
 
 
@@ -70,7 +80,7 @@ async function startgame() {
 function inittyping() {
     const characters = wor.querySelectorAll("span");
     let typedchar = inpField.value.split("")[charind];
-    console.log(typedchar)
+
     if (typedchar == null) {
         charind--;
         characters[charind].classList.remove("correct", "incorrect");
@@ -84,7 +94,7 @@ function inittyping() {
 
             characters[charind].classList.add("incorrect");
 
-            mistake++;
+            mistake ++;
             document.getElementById("mistake").innerText = "MISTAKES: " + mistake;
         }
         charind++;
