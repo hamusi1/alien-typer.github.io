@@ -10,27 +10,26 @@ body {
 }
 
 h1 img {
-
     position: fixed;
-    top: 20px;
-    width: 80px;
-    padding: 10px 10px 10px 10px;
-    left: 50px;
+    top: 3%;
+    width: 4.7%;
+    padding: 0.5% 1% 1% 1%;
+    left: 19%;
 }
 
 main {
-    width: 600px
+    width: 100%
 }
 
 button {
+    position: fixed;
     background: #7977b8;
     color: #19183c;
-    padding: 10px;
-    border-radius: 15px;
+    padding: 0.3%;
+    border-radius: 8px;
     border: 1px solid;
-    position: fixed;
-    right: 500px;
-    top: 105px;
+    right: 27%;
+    top: 12.5%;
 }
 
 #buttons {
@@ -39,21 +38,30 @@ button {
 
 button:hover {
     background: #4b4a78;
+  
 }
+
+
+
+
 
 main {
     margin: 50px auto;
-    width: 1000px;
+    width: 100%;
 }
 
-h1 {
-    text-align: left;
-    padding: 10px 10px 10px 10px;
+#alien {
+    position:fixed;
+    
+    padding: 0.5% 1% 1% 1%;
+    left : 24%;
+    top: 3.8%
 }
 
 #info {
     position: fixed;
-    top: 105px;
+    left: 24%;
+    top: 12%;
     font-size: x-large;
     padding: 0 20px 20px 20px;
 }
@@ -65,20 +73,23 @@ button:active {
 }
 
 #words {
+    position:fixed;
     z-index: 2;
     font-family: "Roboto Mono", monospace;
     font-size: large;
     color: #606577;
     margin: 0 5px;
     display: inline-block;
-    right: 1100px;
     user-select: none;
     pointer-events: none;
+    top:20%;
+    width: 50%;
+    left :23%;
 }
 
 div#game {
-    line-height: 35px;
-    height: 200px;
+    line-height: 200%;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -87,7 +98,9 @@ div#game {
 }
 
 #start {
-    text-align: center
+    position:fixed;
+    top:9%;
+    right:50%
 }
 
 span.correct {
@@ -112,30 +125,32 @@ input {
     height: 500px;
 }
 
-#wpm, #cpm {
+#wpm {
     position: fixed;
-    top: 500px;
-    width: 500px;
+    top: 52.35%;
+    left: 19%;
     padding: 30px 30px 30px 30px;
 }
 
 #cpm {
-    right: 710px;
+    position:fixed;
+    top: 52.35%;
+    left: 33%;
     padding: 30px 30px 30px 30px;
 }
 
 #mistake {
-    right: 830px;
+    left: 47%;
     position: fixed;
-    top: 500px ;
+    top: 52.35%;
     padding: 30px 30px 30px 30px;
 }
 
 #acc {
-    right: 550px;
+    left: 63%;
     position: fixed;
-    top: 520px;
-    padding: 10px 10px 10px 10px;
+    top: 52.35%;
+    padding: 30px 30px 30px 30px;
 }
 
 span.active {
@@ -161,4 +176,9 @@ span.active {
 }
 #easter:hover {
         color: #606577;
+}
+#timeover {
+    position: fixed;
+    left: 24%;
+    top: 40%;
 }
