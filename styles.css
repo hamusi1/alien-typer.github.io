@@ -23,13 +23,15 @@ main {
 
 button {
     position: fixed;
-    background: #7977b8;
-    color: #19183c;
+    background: #003f5d;
+    color: #00ADFF;
     padding: 0.3%;
     border-radius: 8px;
     border: 1px solid;
     right: 27%;
     top: 12.5%;
+    cursor: pointer;
+    border-color: #003f5d;
 }
 
 #buttons {
@@ -37,8 +39,7 @@ button {
 }
 
 button:hover {
-    background: #4b4a78;
-  
+    background: #00557e;
 }
 
 
@@ -181,4 +182,134 @@ span.active {
     position: fixed;
     left: 24%;
     top: 40%;
+}
+
+#game1 {
+    font-size: 250%;
+    position: fixed;
+    top: 55%;
+    left: 25%;
+    right: 55%;
+    
+}
+
+#game2 {
+    font-size: 250%;
+    position: fixed;
+    top: 55%;
+    left: 55%;
+    right: 25%
+}
+
+#game2:hover{
+        transform: scale(1.1);
+}
+#alimg {
+    width: 20%;
+    border: 1px solid;
+    border-radius: 5%;
+    border-color: #00ADFF;
+    position: fixed;
+    top: 34%;
+    left: 25%;
+    right: 55%
+}
+#game1:hover {
+    transform: scale(1.05);
+}
+#game1 {
+    transition: transform 0.3s ease;
+}
+#alimg:hover {
+        transform: scale(2);
+        top:22%
+    }
+
+#alimg {
+    transition: transform 0.3s ease;
+    transition: top 0.3s ease;
+}
+#menupage {
+    background-color: #003f5d;
+    width: 15%;
+    height: 100%;
+    position: fixed;
+    left: -16%;
+    top: 0;
+    border-radius: 3%;
+    transition:left 0.3s ease;
+}
+
+#svg {
+    position: fixed;
+    right: 96.6% !important;
+    width: 3% !important;
+    border-radius: 10px;
+    fill: #00ADFF;
+    top: 6% !important;
+    height: 5%;
+    transition: background-color 0.1s ease;
+}
+#menupage:hover {
+       position:fixed;
+       left:-1%;
+       background-color: #00557e;
+       cursor:pointer;
+           
+}
+
+#menu {
+    position: fixed;
+    width: 13%;
+    height: 8%;
+    font-size: 250%;
+    left: -10.3%;
+    top: 18%;
+    background-color: #19183c;
+    transition: left 0.3s ease;
+    border-color: #19183c;
+}
+    #menu:hover {
+        position: fixed;
+        left: -1%;
+        cursor: pointer;
+        border-color: #19183c;
+        border-width: 0px;
+    }
+#LeaderBoard {
+    position: fixed;
+    width: 13%;
+    height: 8%;
+    font-size: 150%;
+    left: -10.3%;
+    top: 30%;
+    background-color: #19183c;
+    transition: left 0.3s ease;
+    border-color: #19183c;
+}
+#LeaderBoard:hover {
+    position: fixed;
+    left: -1%;
+    cursor: pointer;
+    border-color: #003f5d;
+    border-width: 0px;
+}
+#Login {
+    position: fixed;
+    width: 13%;
+    height: 8%;
+    font-size: 150%;
+    left: -10.3%;
+    top: 42%;
+    background-color: #19183c;
+    transition: left 0.3s ease;
+    border-color: #19183c;
+}
+
+#Login:hover {
+        position: fixed;
+        left: -1%;
+        cursor: pointer;
+        border-color: #003f5d;
+        border-width: 0px;
 }
