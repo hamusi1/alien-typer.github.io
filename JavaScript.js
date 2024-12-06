@@ -26,10 +26,10 @@ async function startgame() {
     cpm = 0;
     wpm = 0;
     acc = 0;
-    seconds = 30;
+   
 
 
-    document.getElementById("info").innerText = "30";
+    document.getElementById("info").innerText = "15";
     document.getElementById("mistake").innerText = "MISTAKES: 0";
     document.getElementById("cpm").innerHTML = "CPM: 0";
     document.getElementById("wpm").innerHTML = "WPM: 0";
@@ -57,9 +57,9 @@ async function timer() {
     else if (run == false) {
         
         run = true     
-    for(seconds = 30; seconds >= 0; seconds--) {
+    for(seconds = 15; seconds >= 0; seconds--) {
         if (run == false) {
-            document.getElementById("info").innerText = "30"
+            document.getElementById("info").innerText = "15"
             return;
         } else {
             document.getElementById("info").innerText = seconds;
@@ -99,9 +99,9 @@ function inittyping() {
         }
         charind++;
         characters[charind].classList.add("active");
-        cpm = (charind - mistake) * 2;
+        cpm = (charind - mistake) * 4;
         document.getElementById("cpm").innerHTML = "CPM: " + cpm
-        wpm = ((charind - mistake) / 5) * 2;
+        wpm = ((charind - mistake) / 5) * 4;
         document.getElementById("wpm").innerHTML = "WPM: " + wpm;
 
         if (charind > 0) {
